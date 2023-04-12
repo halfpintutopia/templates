@@ -1,0 +1,67 @@
+/*Resource - reference: Kevin Powell's Simplify your CSS with these 3 grid layout solutions https://www.youtube.com/watch?v=JHregeIsjPQ&t=16s*/
+/*----------------------------------------------------------------------------------------- Footer at bottom of page */
+#main-layout {
+    min-height: 100vh;
+    min-height: 100dvh; //*dynamic view*/
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+}
+
+/*-------------------------------------------------------------------------------------- Header with image and title */
+/*Option 1*/
+.primary-header {
+    display: grid;
+    grid-template-areas: 'stack';
+    place-items: center;
+}
+
+.primary-header > * {
+    grid-area: stack;
+}
+
+/*Option 2 - Easier for to set up a media query */
+.primary-header {
+    display: grid;
+    place-items: center;
+}
+
+.primary-header > * {
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+}
+
+/*Media Query for Option 2*/
+@media (width > 50em) {
+    .primary-header {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .primary-header__image {
+        grid-column: 1;
+    }
+
+    .primary-header__title {
+        grid-column: 2;
+    }
+}
+
+/*----------------------------------------------------------------------------------------------------------- Forms */
+.contact-form {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.form-group--full-width {
+    grid-column: 1 / -1
+}
+
+@media (width > 35em) {
+    .contact-form {
+        grid-template-columns: 1fr 1fr;
+    }
+}
