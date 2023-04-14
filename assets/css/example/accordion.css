@@ -86,7 +86,11 @@ img {
 
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/:has*/
 /* about:config - layout.css.has-selector.enabled*/
-.accordion__panel:has([aria-expanded="true"]) {
+/*.accordion__panel:has([aria-expanded="true"]) {*/
+/*    flex-basis: clamp(15rem, 40vh, 20rem);*/
+/*}*/
+
+.accordion__panel[data-accordion-expanded="true"] {
     flex-basis: clamp(15rem, 40vh, 20rem);
 }
 
