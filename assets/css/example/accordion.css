@@ -105,8 +105,13 @@ img {
 .accordion__content > p {
     transform: translateY(2rem);
     opacity: 0;
-    transition: transform 500ms 250ms, opacity 500ms;
     margin-left: calc(var(--_button-size) + var(--_panel-gap));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .accordion__content > p {
+        transition: transform 500ms 250ms, opacity 500ms;
+    }
 }
 
 .accordion__panel[data-accordion-expanded='true'] .accordion__content > p {
