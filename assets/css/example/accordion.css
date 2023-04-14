@@ -101,7 +101,7 @@ img {
 .accordion__content > p {
     transform: translateY(2rem);
     opacity: 0;
-    transition: transform 500ms, opacity 500ms;
+    transition: transform 500ms 250ms, opacity 500ms;
     margin-left: calc(var(--_button-size) + var(--_panel-gap));
 }
 
@@ -122,6 +122,12 @@ img {
     height: 100%;
     object-fit: cover;
     z-index: -1;
+
+    transition: filter 500ms;
+}
+
+.accordion__panel[data-accordion-expanded="true"] .accordion__image {
+    filter: brightness(.5);
 }
 
 .accordion__trigger {
