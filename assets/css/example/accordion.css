@@ -22,8 +22,6 @@ img {
 }
 
 /* Resets end of */
-
-
 .wrapper {
     max-width: 50rem;
     margin-inline: auto;
@@ -31,33 +29,32 @@ img {
 }
 
 .accordion {
+    --_button-size: 4rem;
+    --_panel-padding: .75rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    /*Demo only*/
+    margin-top: 20rem;
+}
+
+.accordion * {
+    margin: 0;
 }
 
 .accordion__panel {
     position: relative;
     isolation: isolate;
-}
-
-.accordion__image {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
-.accordion__trigger {
-    background: transparent;
-    border: 0;
+    flex-basis: calc((var(--_panel-padding) * 2) + var(--_button-size));
+    overflow: hidden;
+    padding: var(--_panel-padding);
+    border-radius: calc(((var(--_panel-padding) * 2) + var(--_button-size)) / 2);
 }
 
 .accordion__icon {
     background: hsl(0, 0%, 0%, .55);
-    font-size: 3rem;
+    width: var(--_button-size);
+    font-size: 2rem;
     aspect-ratio: 1 / 1;
     padding: 0.75rem;
     border-radius: 50%;
@@ -86,3 +83,38 @@ img {
 .accordion__panel:nth-child(5) {
     --_panel-color: hsl(20, 70%, 50%);
 }
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/:has*/
+/* about:config - layout.css.has-selector.enabled*/
+.accordion__panel:has([aria-expanded="true"]) {
+    flex-basis: clamp(15rem, 40vh, 20rem);
+}
+
+.accordion__content > p {
+    transform: translateY(2rem);
+    opacity: 0;
+}
+
+.accordion__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.accordion__trigger {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: row-reverse;
+    background: transparent;
+    border: 0;
+    padding: 0;
+}
+
+
+
+
+
