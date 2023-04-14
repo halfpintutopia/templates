@@ -111,6 +111,15 @@ img {
     flex-grow: 1;
 }
 
+.accordion__trigger {
+    outline: 0; /*should never do but in this case the outline is being used in accordion panel*/
+}
+
+.accordion__panel:focus-within {
+    outline: 3px solid var(--_panel-color);
+    outline-offset: 4px;
+}
+
 .accordion__content > p {
     transform: translateY(2rem);
     opacity: 0;
