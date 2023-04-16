@@ -1,0 +1,39 @@
+/*Kevin Powells' How to make a website light/dark toggle with CSS & JS https://www.youtube.com/watch?v=wodWDIdV9BY&t=131s*/
+body {
+    --clr-light: #fdffc4;
+    --clr-dark: #00332a;
+    --foreground: var(--clr-dark);
+    --background: var(--clr-light);
+
+    background: var(--background);
+    color: var(--foreground);
+}
+
+.dark-mode {
+    --foreground: var(--clr-light);
+    --background: var(--clr-dark);
+}
+
+.dark-mode-toggle {
+
+    position: absolute;
+    z-index: 100;
+    top: 1em;
+    right: 1em;
+    color: var(--foreground);
+    border: 2px solid currentColor;
+    padding: 4px;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+.click-here {
+    /*SVG icon from Font Awesome*/
+    width: 100px;
+    right: 1.5em;
+    position: absolute;
+    top: 3em;
+}
