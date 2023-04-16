@@ -58,4 +58,31 @@ display: flow-root;
 h1 {
     margin-top: 300px; <----
 }
+
+header {
+    height: 100vh <-- fallback if no browser support
+    height: 100svh; <-- optimal helps with mobile dvh lvh dvh can get janky
+}
+
+content: open-quote;
+isolation: isolate; <--- new stacking context
+inset: 0;
+inset: 1rem 2rem 4rem
+counter-increment: your_chosen_name;
+
+section {
+    counter-increment: section-counter;
+}
+
+section {
+    opacity: .5;
+    content: counter(section-counter) ". ";
+}
+
+contain: style; <-- self isolated/contained area
+contain: layout;
+contain: paint;
+-----
+when 3 value it top left and right and bottom
+margin: 1em 4em 2em
 */
