@@ -12,3 +12,25 @@
     src: url("") format('woff'), /* Modern browsers */
     src: url("") format('truetype'); /* Safari, Android, iOS */
 }
+
+/*
+syntax for font variable
+src: url("") format("truetype-variations"); not supported in all browsers
+
+font-variation-settings (weight, width, oblique, stretch, slant, optical size)
+Custom axes must be uppercase
+    'GRAD' 88,
+    'YTAS' 680,
+    'YTDE' 190;
+
+.class {
+    font-variation-settings: 'wght' 563,
+    'wdth' 491,
+    ['ital' 1, OR 'slnt': 20,
+    'opsz' 16,
+    'GRAD' 88,
+    'YTAS' 680,
+    'YTDE' 190;
+}
+*/
+
