@@ -1,0 +1,32 @@
+/* Flexible typography with CSS locks https://blog.typekit.com/2016/08/17/flexible-typography-with-css-locks/ */
+:root {
+    /* breakpoint variables */
+    --bp-small: 24.15;
+    --bp-medium: 45.75;
+    --bp-large: 60.25;
+    --bp-xlarge: 75;
+
+    /* h1 variables */
+    --h1-font-size-min: 5;
+    --h1-font-size-max: 10;
+}
+
+h1 {
+    font-size: calc(var(--h1-font-size-min) * 1em);
+}
+
+/* landscape on mobile */
+@media screen and (width > 24.15em) {
+    h1 {
+        /* use for font-size, line height, font optical sizing, font-stretch - but always end up with a unit value */
+        /* start with the min value and then adding a subtraction of the min and max and then using the formular for high and low end break points and a 100 viewport with units */
+        font-size: calc((var(--h1-font-size-min) * 1em) + (var(--h1-font-size-max) - var(--h1-font-size-min)) * ((100vw - (var(--bp-small) * 1em)) / var(--bp-xlarge) - var(--bp-small)));
+    }
+}
+
+@media screen and (width > 75em) {
+    h1 {
+        font-size: calc(var(--h1-font-size-max) * 1em);
+    }
+}
+
