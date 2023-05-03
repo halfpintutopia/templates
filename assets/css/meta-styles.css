@@ -1,0 +1,35 @@
+body,
+div,
+p, p:first-line, p:first-letter,
+th, td,
+ul, li,
+h1, h2, h3, h4, h5, h6,
+blockquote, figcaption, cite,
+i, em, b, strong, button {
+    font-family: "", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-variation-settings: 'wght' var(--text-wght), 'ital' var(--text-ital);
+}
+
+@supports (font-variation-settings: normal) {
+    .no-support-message {
+        display: none;
+        position: absolute;
+        text-indent: -999em;
+        visibility: hidden;
+    }
+}
+
+@supports not (font-variation-settings: normal) {
+    .example-ampersand {
+        display: none;
+        position: absolute;
+        text-indent: -999em;
+        visibility: hidden;
+    }
+}
+
+.no-support-message {
+    display: flex;
+}
