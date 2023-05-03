@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "";
+    src: url("") format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: ""; /* name of font e.g. "PLex Serif" */
+    font-style: ; /* e.g. normal, italic */
+    font-weight: ; /* e.g. normal, bold, 400 etc */
+    src: url("") format('woff2'), /* Super modern browsers */
+    src: url("") format('woff'), /* Modern browsers */
+    src: url("") format('truetype'); /* Safari, Android, iOS */
+}
