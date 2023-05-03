@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/example/dark-light-mode.css">
     <script type="text/javascript">
+        // Loading multiple fonts using Font Face Observer https://codepen.io/bramstein/pen/XayGxW
         (function initiateFontFaceObserver() {
             // var FontFaceObserver = require('fontfaceobserver');
 
@@ -22,7 +23,10 @@
             var fontA = new FontFaceObserver("", {});
             var fontB = new FontFaceObserver("", {});
 
-            Promise.all([fontA.load(), fontB.load()])
+            Promise.all([
+                fontA.load(),
+                fontB.load()
+            ])
                 .then(function loadFonts() {
                     document.documentElement.classList.remove('wf-inactive');
                     document.documentElement.classList.add('wf-active');
